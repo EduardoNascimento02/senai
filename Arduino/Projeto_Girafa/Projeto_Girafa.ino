@@ -1,33 +1,39 @@
-const int pinoBuz = 11;
-const int pinoTri = 2;
-const int pinoEcho =3;
+#include <LiquidCrystal.h>
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+const int pinoTri = 8;
+const int pinoEcho =9;
 float TempoEcho = 0;
 const float VelocidadeSom_mpors = 340; 
 const float VelocidadeSom_mporus = 0.000340; 
-int tempo = 400;
 float dist = 0;
+const String msg = "Afaste-se";
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+const String msg2 = "Nao aproximar";
 
 void setup() {
   pinMode(pinoTri, OUTPUT);
   digitalWrite(pinoTri, LOW);
   pinMode(pinoEcho, INPUT); 
-  pinMode(pinoBuz,OUTPUT);
   Serial.begin(9600);
-  delay(100);
+  lcd.begin(16, 2);
 }
 
 void loop() {
-
   DisparaPulsoUltrassonico();
   TempoEcho = pulseIn(pinoEcho, HIGH);
   dist = CalculaDistancia(TempoEcho*100);
   Serial.print("Distancia em centimetros: ");
   Serial.println(dist);
-  if(dist<10){
-    tone(pinoBuz,528,tempo);
+  if(dist<30){
+    lcd.print(msg);
+    delay(500);
+    lcd.clear();
+  } 
+  else{
+    lcd.print(msg2);
+    delay(500);
+    lcd.clear();
   }
-digitalWrite(pinoLed,LOW);
-
 }
 
 void DisparaPulsoUltrassonico(){
