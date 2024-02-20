@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+		<title>ANEIS - A escola do futuro</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+        <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+        
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <a href="index.html" class="logo"><img src="img/aneis.png" alt="aneis" id="aneis"></a>
+            </div>
+              <div id="nav">
+                <a class="active" href="index.html" id="botao"><div>Sair</div></a>
+                <a href="sobre.html" id="botao"><div>Sobre</div></a>
+              </div> 
+        </header>
+        <main>
+            <div id="portal">
+                <img src="img/Logo Cloud Play.gif" alt="" id="cloudplay">
+                <h2>Bem vindo de volta, Admin!</h2>
+                <div id="videos">
+                    <h2>Videoaulas</h2>
+                    <div class="swiffy-slider">
+                        <ul class="slider-container">
+                            <li>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Uk5VH36I6f8?si=UZ10fQb_uD3vtJ97" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </li>
+                            <li>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/-CzwgSLBTUQ?si=TWcNaRB9G2W6tqgv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </li>
+                            <li>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/w1y4qbvGepU?si=3blwFHKc6MKbwW95" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </li>
+                        </ul>
+                    
+                        <button type="button" class="slider-nav"></button>
+                        <button type="button" class="slider-nav slider-nav-next"></button>
+                    
+                        <div class="slider-indicators">
+                            <button class="active"></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+        </main>
+        <footer>
+            <p>ANEIS 2024 - Alguns direitos reservados.</p>
+        </footer>
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Next/previous controls
+            function passaSlide(n) {
+            showSlides(slideIndex += n);
+            }
+
+            function showSlides(n) {
+            var i;
+            var slides = document.querySelector(".mySlideVideo");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+            }
+        </script>
+    </body>
+ 
+</html>
