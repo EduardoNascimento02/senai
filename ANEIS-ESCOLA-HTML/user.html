@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+		<title>ANEIS - A escola do futuro</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <a href="index.html" class="logo"><img src="img/aneis.png" alt="aneis" id="aneis"></a>
+     
+            </div>
+              <div id="nav">
+                <a class="active" href="index.html" id="botao"><div>Sair</div></a>
+                <a href="sobre.html" id="botao"><div>Sobre</div></a>
+              </div> 
+        </header>
+        <main>
+            <form>
+
+                <h3>Login</h3>
+                <input type="text" placeholder="Login" id="login">
+                <input type="password" placeholder="Senha" id="senha">
+                <input type="submit" onclick="logar(); return false">
+        
+            </form>
+             <script>
+
+
+        function logar(){
+
+            var login = document.getElementById('login').value;
+            var senha = document.getElementById('senha').value;
+
+            if(login == "admin" && senha == "admin"){
+                alert('Sucesso');
+                location.href = "home.html";
+            }else{
+                alert('Usuario ou senha incorretos');
+            }
+
+        }
+
+    </script>
+        </main>
+        <footer>
+
+                        <p>ANEIS 2024 - Alguns direitos reservados.</p>
+        </footer>
+        <script>
+
+
+            function logar(){
+    
+                var login = document.getElementById('login').value;
+                var senha = document.getElementById('senha').value;
+    
+                if(login == "admin" && senha == "admin"){
+
+                    location.href = "portal.html";
+                }else{
+                    alert('Usuario ou senha incorretos');
+                }
+    
+            }
+    
+        </script>
+    </body>
+ 
+</html>
